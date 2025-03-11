@@ -4,7 +4,7 @@ import 'dart:math';
 
 import 'package:flutter/services.dart';
 
-import '../convertion/common_convertion_defination.dart';
+import '../conversion/common_conversion_definition.dart';
 
 import 'dict_segment.dart';
 

@@ -5,7 +5,7 @@ import 'package:flutter/services.dart';
 
 import 'node.dart';
 import 'pair.dart';
-import '../convertion/common_convertion_defination.dart';
+import '../conversion/common_conversion_definition.dart';
 
 import 'character_utils.dart';
 

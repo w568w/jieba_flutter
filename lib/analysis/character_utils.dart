@@ -1,4 +1,4 @@
-import '../convertion/common_convertion_defination.dart';
+import '../conversion/common_conversion_definition.dart';
 
 class CharacterUtil {
   static RegExp reSkip = RegExp("(\\d+\\.\\d+|[a-zA-Z0-9]+)");

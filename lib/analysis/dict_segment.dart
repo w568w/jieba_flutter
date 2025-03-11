@@ -1,5 +1,5 @@
 import 'dart:core';
-import 'package:jieba_flutter/convertion/common_convertion_defination.dart';
+import '../conversion/common_conversion_definition.dart';
 
 import 'hit.dart';
 
