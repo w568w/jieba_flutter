@@ -11,7 +11,7 @@
 
   @override
    String toString() {
-    return "[" + word + ", " + startOffset.toString() + ", " + endOffset.toString() + "]";
+    return "[$word, $startOffset, $endOffset]";
   }
 
 }

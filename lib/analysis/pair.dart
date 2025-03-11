@@ -7,7 +7,7 @@
 
    @override
   String toString() {
-    return "Candidate [key=" + key.toString() + ", freq=" + freq.toString() + "]";
+    return "Candidate [key=$key, freq=$freq]";
   }
 
 }
