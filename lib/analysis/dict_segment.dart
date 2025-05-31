@@ -209,7 +209,8 @@ class DictSegment implements Comparable<DictSegment> {
 
   /// 获取数组容器 线程同步方法
   List<DictSegment> getChildrenArray() {
-    childrenArray ??= [];
+    // childrenArray ??= [];
+    childrenArray ??= List<DictSegment?>.filled(ARRAY_LENGTH_LIMIT, null).cast<DictSegment>();
     return childrenArray!;
   }
 

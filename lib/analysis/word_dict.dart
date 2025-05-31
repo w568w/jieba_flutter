@@ -70,7 +70,7 @@ class WordDictionary {
     _dict = DictSegment('');
     var file = await rootBundle.loadString(MAIN_DICT);
     for (var line in file.split("\n")) {
-      List<String> tokens = line.split("[\t ]+");
+      List<String> tokens = line.split(RegExp(r'[\t ]+'));
 
       if (tokens.length < 2) {
         continue;
@@ -104,7 +104,7 @@ class WordDictionary {
 
     List<String> lines = file.readAsLinesSync();
     for (var line in lines) {
-      List<String> tokens = line.split("[\t ]+");
+      List<String> tokens = line.split(RegExp(r'[\t ]+'));
 
       if (tokens.isEmpty) {
         // Ignore empty line
@@ -117,8 +117,11 @@ class WordDictionary {
       if (tokens.length == 2) {
         freq = double.parse(tokens[1]);
       }
-      word = addWord(word)!;
-      freqs[word] = log(freq / total);
+      final addedWord = addWord(word);
+      if (addedWord == null) {
+        continue;
+      }
+      freqs[addedWord] = log(freq / total);
     }
   }
 
