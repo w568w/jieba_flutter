@@ -2,6 +2,7 @@
 
 A Flutter implementation of Chinese word segmentation Python library, [jieba](https://github.com/fxsjy/jieba).
 
+This library is essentially a line-by-line translation of the Java implementation of jieba, [jieba-analysis](https://github.com/huaban/jieba-analysis/).
 ## Usage
 
 ```dart
