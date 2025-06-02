@@ -1,6 +1,6 @@
 name: jieba_flutter
 description: A Flutter implementation of Chinese word segmentation Python library, jieba.
-version: 0.1.0
+version: 0.2.0
 repository: https://github.com/w568w/jieba_flutter
 
 environment:
