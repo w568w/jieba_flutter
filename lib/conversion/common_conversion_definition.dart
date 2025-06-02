@@ -19,7 +19,7 @@ extension MapEx<K, V> on Map<K, V> {
   }
 }
 
-int binarySearch<T extends Comparable<T>>(List<T> sortedList, T value,
+int binarySearch<T extends Comparable<T>>(List<T?> sortedList, T? value,
     {int start = 0, int? end, int Function(T, T)? compare}) {
   compare ??= Comparable.compare;
   var min = 0;
@@ -27,6 +27,16 @@ int binarySearch<T extends Comparable<T>>(List<T> sortedList, T value,
   while (min < max) {
     var mid = min + ((max - min) >> 1);
     var element = sortedList[mid];
+    if (element == null || value == null) {
+      if (element == null && value == null) {
+        return mid; // Found the position of null
+      } else if (element == null) {
+        max = mid; // Nulls are considered greater than non-nulls
+        continue;
+      } else { // if (value == null)
+        return -1; // Null cannot be compared, so not found
+      }
+    }
     var comp = compare(element, value);
     if (comp == 0) return mid;
     if (comp < 0) {

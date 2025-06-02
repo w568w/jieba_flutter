@@ -15,7 +15,7 @@ class DictSegment implements Comparable<DictSegment> {
   Map<String, DictSegment>? childrenMap;
 
   // 数组方式存储结构
-  List<DictSegment>? childrenArray;
+  List<DictSegment?>? childrenArray;
 
   // 当前节点上存储的字符
   String nodeChar;
@@ -67,7 +67,7 @@ class DictSegment implements Comparable<DictSegment> {
     DictSegment? ds;
 
     // 引用实例变量为本地变量，避免查询时遇到更新的同步问题
-    List<DictSegment>? segmentArray = childrenArray;
+    List<DictSegment?>? segmentArray = childrenArray;
     Map<String, DictSegment>? segmentMap = childrenMap;
 
     // STEP1 在节点中查找keyChar对应的DictSegment
@@ -157,7 +157,7 @@ class DictSegment implements Comparable<DictSegment> {
 
     if (storeSize <= ARRAY_LENGTH_LIMIT) {
       // 获取数组容器，如果数组未创建则创建数组
-      List<DictSegment> segmentArray = getChildrenArray();
+      List<DictSegment?> segmentArray = getChildrenArray();
       // 搜寻数组
       DictSegment keySegment = DictSegment(keyChar);
       int position =
@@ -208,8 +208,8 @@ class DictSegment implements Comparable<DictSegment> {
   }
 
   /// 获取数组容器 线程同步方法
-  List<DictSegment> getChildrenArray() {
-    childrenArray ??= [];
+  List<DictSegment?> getChildrenArray() {
+    childrenArray ??= List<DictSegment?>.filled(ARRAY_LENGTH_LIMIT, null);
     return childrenArray!;
   }
 
@@ -224,8 +224,9 @@ class DictSegment implements Comparable<DictSegment> {
   /// @param segmentArray
 
   void migrate(
-      List<DictSegment> segmentArray, Map<String, DictSegment> segmentMap) {
-    for (DictSegment segment in segmentArray) {
+      List<DictSegment?> segmentArray, Map<String, DictSegment> segmentMap) {
+    for (DictSegment? segment in segmentArray) {
+      if (segment == null) continue;
       segmentMap[segment.nodeChar] = segment;
     }
   }
