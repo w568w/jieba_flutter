@@ -15,6 +15,6 @@ print(seg.process("结过婚和尚未结过婚的", SegMode.SEARCH))
 
 ## Licenses
 
-This project is dual-licensed under [the GNU General Public License v3.0](LICENSE-GPL) and [the Apache License 2.0](LICENSE-APACHE) (since version 0.2.0).
+This project is dual-licensed under [the GNU General Public License v3.0](LICENSE-GPL) (since version 0.1.0) and [the Apache License 2.0](LICENSE-APACHE) (since version 0.2.0).
 
 We encourage you to use GPLv3.0 for your open-source projects. But if you want to use this library in a commercial project, please conform to the Apache License 2.0 at least.
