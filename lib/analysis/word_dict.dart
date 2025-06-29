@@ -10,7 +10,7 @@ import 'dict_segment.dart';
 
 class WordDictionary {
   static WordDictionary? singleton;
-  static const String MAIN_DICT = "assets/dict.txt";
+  static const String MAIN_DICT = "packages/jieba_flutter/assets/dict.txt";
   static const String USER_DICT_SUFFIX = ".dict";
 
   final Map<String, double> freqs = {};
