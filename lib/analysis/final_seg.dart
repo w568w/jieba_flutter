@@ -9,7 +9,7 @@ import 'character_utils.dart';
 
 class FinalSeg {
   static FinalSeg? singleInstance;
-  static const String PROB_EMIT = "assets/prob_emit.txt";
+  static const String PROB_EMIT = "packages/jieba_flutter/assets/prob_emit.txt";
   static List<String> states = ['B', 'M', 'E', 'S'];
   late Map<String, Map<String, double>> emit;
   late Map<String, double> start;
